@@ -1,2 +1,7 @@
-# ma286_linalg
-MAT286 Linear Algebra
+# MAT286 Linear Algebra
+
+## Contents
+- Study guides
+
+## Requirements
+- Jupyter notebook/lab
