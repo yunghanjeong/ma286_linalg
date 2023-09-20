@@ -1,4 +1,4 @@
-# Chapter 1. System of Linear Equations
+# Chapter 2. Matrices
 
 Review for MAT286 Linear Algebra 
 
