@@ -45,12 +45,14 @@ a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n = b_m\\
 
 This can be matricized 
 
-$$\\begin{bmatrix}
+$$\\begin{block}
+\begin{bmatrix}
 a_{11}, a_{12}, ... a_{1n}\\
 a_{21}, a_{22}, ... a_{2n}\\
 ...\\
 a_{m1}, a_{m2}, ... a_{mn}\\
-\end{bmatrix}$$
+\end{bmatrix}
+\end{block}$$
 
 
 
