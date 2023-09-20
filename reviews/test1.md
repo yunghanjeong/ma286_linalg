@@ -45,14 +45,35 @@ a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n = b_m\\
 
 This can be matricized 
 
-$$\\begin{block}
-\begin{bmatrix}
+$$\begin{bmatrix}
 a_{11}, a_{12}, ... a_{1n}\\
 a_{21}, a_{22}, ... a_{2n}\\
 ...\\
 a_{m1}, a_{m2}, ... a_{mn}\\
 \end{bmatrix}
-\end{block}$$
+\begin{bmatrix}
+x_1\\
+x_2\\
+...\\
+x_n\\
+\end{bmatrix}=
+\begin{bmatrix}
+b_1\\
+b_2\\
+...\\
+b_n\\
+\end{bmatrix}$$
+
+or simply
+
+$\ AX = b$
+
+#### Definitions
+$\ A$ is the **coefficient matrix** and consist of real numbers
+
+$\ X$ is the variable matrix consisting of elements $\ x_1, x_2,... x_n$ as a column matrix (vector)
+
+$\ b$ is a matrix constisting of real number constants
 
 
 
