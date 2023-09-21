@@ -65,14 +65,14 @@ $$\begin{equation} I_n =
 3. $\ (cA)^T = c(A^T)$
 4. $\ (AB)^T = B^T A^T$ # note change in multiplication order
 
-#### Symmetric Matrixes
+### Symmetric Matrixes
 A matrix is considered symmetric if $\ A = A^T$
 
 Given a matrix $\ A$ $\ AA^T$ is generally symmetric.
 
-##### Simple proof problem that might be in the test on previous point
+#### Simple proof problem that might be in the test on previous point
 
-Proved that Given a matrix $\ A$ $\ AA^T$ is symmetric.
+Prove that Given a matrix $\ A$ $\ AA^T$ is symmetric.
 
 If $\ AA^T$ is symmetric then
 
@@ -103,7 +103,7 @@ AA^T = AA^T
 
 Therefore $\ AA^T$ is symmetric.
 
-##### Proof using induction using properties 2.
+#### Proof using induction using properties 2.
 
 Prove that following equation is true.
 
@@ -212,7 +212,7 @@ A^{-1} =
 \end{bmatrix}
 \end{equation}$$
 
-#### Singular Matrices
+### Singular Matrices
 
 Matrix $\ A$ is considered singular if non-inversible. 
 
@@ -243,7 +243,7 @@ $$\begin{bmatrix}
 
 The system is inconsistent, and there is no inverse. The matrix $\ A$ is singular.
 
-##### Fast way of calculating the inverse of a 2x2 matrix
+#### Fast way of calculating the inverse of a 2x2 matrix
 
 Given Matrix $\ A$
 
