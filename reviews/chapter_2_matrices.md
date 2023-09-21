@@ -103,9 +103,9 @@ AA^T = AA^T
 
 Therefore $\ AA^T$ is symmetric.
 
-##### Proof on properties number 2 using induction
+##### Proof using induction using properties 2.
 
-*equation*
+Prove that following equation is true.
 
 $$\begin{equation}
 (A_1 + A_2 + A_3 + ... + A_n)^T = A_1^T + A_2^T + A_3^T + ... + A_n^T 
@@ -122,3 +122,153 @@ At $\ n=k+1$ the left hand side would be
 $$\begin{equation}
 ((A_1 + A_2 + A_3 + ... + A_k) + A_{k+1})^T
 \end{equation}$$
+
+Using properties number 2.
+
+$$\begin{equation}
+((A_1 + A_2 + A_3 + ... + A_k) + A_{k+1})^T = (A_1 + A_2 + A_3 + ... + A_k)^T + A_{k+1}^T
+\end{equation}$$
+
+Subsituting from  $\ n=k$
+
+$$\begin{equation}
+(A_1 + A_2 + A_3 + ... + A_k)^T + A_{k+1}^T =  A_1^T + A_2^T + A_3^T + ... + A_k^T + A_{k+1}^T 
+\end{equation}$$
+
+Therefore
+
+$$\begin{equation}
+(A_1 + A_2 + A_3 + ... + A_k + A_{k+1})^T=  A_1^T + A_2^T + A_3^T + ... + A_k^T + A_{k+1}^T 
+\end{equation}$$
+
+which makes our initial equation true.
+
+
+## Chapter 2.3 Inverse of Matrix
+
+A square matrix of size n by n $\ A$ is **invertible** (or **nonsingular**) when there exist such matrix $\ B$ that:
+
+$$\begin{equation}
+AB = BA = I_n
+\end{equation}$$
+
+Then the matrix $\ B$ is an inverse of $\ A$.
+
+The inverse of $\ A$ can be denoted as $\ A^{-1}$.
+
+#### Theorem
+
+If $\ A$ is an invertible matrix ., then its inverse $\ A^{-1}$ is unique. 
+
+### Finding the Inverse Matrix
+
+To solve for an inverse of the matrix, form an **adjoined** matrix of the matrix $\ A$ and its identity matrix to form a coefficient matrix.
+Then solve until the $\ A$ side of the adjoin matrix forms the $\ I$. The new value where **adjoined** $\ I$ is the $\ A^{-1}$.
+
+Finding the inverse $\ A^{-1}$ given $\ A$:
+
+$$\begin{equation}
+A =
+\begin{bmatrix}
+1 && 4 \\
+-1 && -3 \\
+\end{bmatrix}
+\end{equation}$$
+
+Form **adjoined** matrix
+
+$$\begin{equation}
+\begin{bmatrix}
+1 && 4 && 1 && 0 \\
+-1 && -3 && 0 && 1 \\
+\end{bmatrix}
+\end{equation}$$
+
+Solve with 
+
+$$\begin{equation}
+R_2 + R_1 \rightarrow R_{2new} =  
+\begin{bmatrix}
+1 && 4 && 1 && 0 \\
+0 && 1 && 1 && 1 \\
+\end{bmatrix}
+\end{equation}$$
+
+$$\begin{equation}
+R_1 + (-4)R_2 \rightarrow R_{1new} =  
+\begin{bmatrix}
+1 && 0 && -3 && -4 \\
+0 && 1 && 1 && 1 \\
+\end{bmatrix}
+\end{equation}$$
+
+The resulting matrix is an **adjoined matrix** of $\ I_A$ and $\ A^{-1}$
+
+$$\begin{equation}
+A^{-1} =  
+\begin{bmatrix}
+-3 && -4 \\
+ 1 && 1 \\
+\end{bmatrix}
+\end{equation}$$
+
+#### Singular Matrices
+
+Matrix $\ A$ is considered singular if non-inversible. 
+
+Consider:
+
+$$\begin{equation}
+A =
+\begin{bmatrix}
+1 && 2 && 0\\
+3 && -1 && 2\\
+-2 && 3 && -2\\
+\end{bmatrix}
+\end{equation}$$
+
+Trying to solve with **adjoined form**:
+
+\begin{bmatrix}
+1 && 2 && 0 && 1 && 0 && 0\\
+3 && -1 && 2 && 0 && 1 && 0\\
+-2 && 3 && -2 && 0 && 0 && 1\\
+\end{bmatrix}
+
+\begin{bmatrix}
+1 && 2 && 0 && 1 && 0 && 0\\
+0 && -7 && 2 && -3 && 1 && 0\\
+0 && 0 && 0 && -1 && 1 && 1\\
+\end{bmatrix}
+
+The system is inconsistent, and there is no inverse. The matrix $\ A$ is singular.
+
+##### Fast way of calculating the inverse of a 2x2 matrix
+
+Given Matrix $\ A$
+
+$$\begin{equation}
+A =
+\begin{bmatrix}
+a && b \\
+c && d \\
+\end{bmatrix}
+\end{equation}$$
+
+Given Matrix $\ A^{-1}$ is:
+
+$$\begin{equation}
+A^{-1} = \frac{1}{ad-bc}
+\begin{bmatrix}
+d && -b \\
+-c && a \\
+\end{bmatrix}
+\end{equation}$$
+
+
+#### Properties of Inverse Matrices
+
+1. $\ (A^{-1})^{-1} = A$ 
+2. $\ (A^k)^T = A^{-1}A^T A^{-1}A^T A^{-1}A^T .... = (A^{-1})^T$
+3. $\ (cA)^{-1} = \franc{1}{c}A^{-1}$ Note the inverse of the constant
+4. $\ (A^T)^{-1} = (A^{-1})^T$
