@@ -251,7 +251,7 @@ x_2 = 1 - t\\
 x_1 + 4t = 8\\
 x_1 = 8 - 4t\\
 x_1 = 4(2 - t)\\
-\end{bmatrix}$$
+\end{matrix}$$
 
 The solution: $\ (4(2-t), 1-t, t) $
 
