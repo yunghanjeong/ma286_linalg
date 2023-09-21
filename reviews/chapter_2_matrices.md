@@ -1,222 +1,124 @@
 # Chapter 2. Matrices
 
-Review for MAT286 Linear Algebra 
+Summary on matrices
+
+**NOTE**: section 2.1. is skipped, because it's already explained in 1.2
 
 **Test Section: #1**
 
 #### Homework
 
-Starting page 22: 33, 35, 37, 43
+Starting page 59: 13, 28, 31, 38, 44, 57
 
 
-## Chapter 1.1 Introduction to System of Linear Equations
+## Chapter 2.2 Properties of Matrix Operations
 
-Recall univariate linear equation: $\ y = mx + b $
+#### Properties of Matrix Addition and Scalar Multiplication
 
-which can also be written as: $\ a_1x + a_2y = b $
+1. $\ A + B = B + A$ Communtative properties of addition
+2. $\ A + (B + C) = (A + B) + C$ Associative properties of addition
+3. $\ (cd)A = c(dA)$ Associate properties of multiplication
+4. $\ IA = A$ Multiplicative Identity $\ I$ is an identity matrix (more on that later)
+5. $\ c(A + B) = cA + cB$ Distributive property
+6. $\ (c + d)A = cA + dA$ Distributive property
 
-similarly: $\ a_1x_1 + a_2x_2 = b $
+#### Properties of Zero Matrix
 
-thus a linear equation with n variables can be written as
+A zero matrix $\ O$ or $\ O_{mn}$ is a matrix filled with zeros with a given dimesion. 
+It usually assumes the size necessary for the calculation. 
 
-$\ a_1x_1 + a_2x_2 + ... + a_nx_n = b $
+in python with numpy: np.zeros((m, n))
 
-#### Definitions
-$\ a_1, a_2,... a_n$ are known as **coefficients** and consist of real numbers
+1. $\ A + O = A$
+2. $\ A + (-A) = O$ Associative properties of addition
+3. if $\ cA = O$ then  $\ c = 0$  or $\ A = O$
 
-$\ b$ is a costant, a real number
+#### Properties of Matrix Multiplication
 
-$\ x_1, x_2,... x_n$ are known as **variables**
+Given matrices $\ A, B, C$ with appropriate size
 
-$\ a_1, x_1$ are known as **leading** coeffeicient and variables, respectively
+1. $\ A(BC) = (AB)C$ Associative properties of matrix multiplication
+2. $\ A(B + C) = AB + AC$ Distributive property
+3. $\ (A + B)C = AC + BC$ Distributive property
+4. $\ c(AB) = (cA)B = A(cB)$
+  
+#### Properties of Identity Matrix
+An identity matrix of matrix $\ A_{m, n}$ is a square matrix of an appropriate size with the main diagonal of the matrix as ones and rest as zeros.
 
-### System of Linear Equations
+1. $\ AI_n = A$ 
+2. $\ I_mA = A$
 
-A system of linear equations or a linear system of m equations and n varible is represented as:
-
-$$\\begin{matrix}
-a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n = b_1\\
-a_{21}x_1 + a_{22}x_2 + ... + a_{2n}x_n = b_2\\
-...\\
-a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_n = b_m\\
-\end{matrix}$$
-
-Any system of equations can be solved, finding the values of the variables. This value is the intersection points  of the lines (equations). In a system of equations you can have no solutions (no intersection or parallel lines), infinite amount of solutions (intersect at a line or greater), or a unique solution. For infinite amount of solutions there is always a trivial solution where everythings is equal to 0. 
-
-## Chapter 1.2 Gaussian Elimination and Gauss-Jordan Elimination
-
-A system of linear equations can be matricized as following:
-
-$$\begin{bmatrix}
-a_{11}, a_{12}, ... a_{1n}\\
-a_{21}, a_{22}, ... a_{2n}\\
-...\\
-a_{m1}, a_{m2}, ... a_{mn}\\
-\end{bmatrix}
+$$\begin{equation} I_n =
 \begin{bmatrix}
-x_1\\
-x_2\\
-...\\
-x_n\\
-\end{bmatrix}=
-\begin{bmatrix}
-b_1\\
-b_2\\
-...\\
-b_n\\
-\end{bmatrix}$$
-
-or simply
-
-$\ AX = b$
-
-#### Definitions
-$\ A$ is the **coefficient matrix** and consist of real numbers
-
-$\ X$ is the variable matrix consisting of elements $\ x_1, x_2,... x_n$ as a column matrix (vector)
-
-$\ b$ is a matrix constisting of real number constants
-
-### Solving a system of linear equations
-
-A system of linear equation can be represented as an augmented matrix.
-
-Given following system:
-
-$$\begin{matrix}
-x && -2y && +3z && = 9\\
--x && +3y && && = -4\\
-2x && -5y && +5z && = 17\\
-\end{matrix}$$
-
-matricized as:
-
-$$\begin{bmatrix}
-1 && -2 && 3\\
--1 && 3 && 0\\
-2 && -5 && 5\\
-\end{bmatrix}
-\begin{bmatrix}
-x\\
-y\\
-z\\
-\end{bmatrix}=
-\begin{bmatrix}
-9\\
--4\\
-17\\
-\end{bmatrix}$$
-
-combine the **coefficient matrix** and the **constants** and form an **augmented matrix**:
-
-$$\begin{bmatrix}
-1 && -2 && 3 && 9\\
--1 && 3 && 0 && -4\\
-2 && -5 && 5 && 17\\
-\end{bmatrix}$$
-
-This augmented matrix can be formatted in to **Row-Echelon Form** with looks for leading 1 and 0's under all leading 1's.
-Rows are represented as **R** with subscripting denoting their positions for calculation.
-
-Row 1 already has a leading 1. Obtain leading 1 and 0 for row 2:
-
-$$\begin{equation} R_{2new} = R_2+R_1 \rightarrow 
-\begin{bmatrix}
-1 && -2 && 3 && 9\\
-0 && 1 && 3 && 5\\
-2 && -5 && 5 && 17\\
+1_{11} && 0 && 0 && ... && 0 && 0\\
+0 && 1 && 0 &&... && 0 && 0\\
+...n-2 row\\
+0 && 0 && 0 &&... && 1 && 0\\
+0 && 0 && 0 && ... && 0 && 1_{nn}\\
 \end{bmatrix}
 \end{equation}$$
 
-Continuing on row 3 to obtain leading 0's. Note keeping consistent notation by limiting calculation with sum and multiplying by negative can lower errors. 
+#### Properties of Tranpose
 
-$$\begin{equation} R_{3new} = R_3 + (-2)(R_1) \rightarrow 
-\begin{bmatrix}
-1 && -2 && 3 && 9\\
-0 && 1 && 3 && 5\\
-0 && -1 && -1 && -1\\
-\end{bmatrix}
+1. $\ (A^T)^T = A$ 
+2. $\ (A + B)^T = A^T + B^T$
+3. $\ (cA)^T = c(A^T)$
+4. $\ (AB)^T = B^T A^T$ # note change in multiplication order
+
+#### Symmetric Matrixes
+A matrix is considered symmetric if $\ A = A^T$
+
+Given a matrix $\ A$ $\ AA^T$ is generally symmetric.
+
+##### Simple proof problem that might be in the test on previous point
+
+Proved that Given a matrix $\ A$ $\ AA^T$ is symmetric.
+
+If $\ AA^T$ is symmetric then
+
+$$\begin{equation}
+AA^T = (AA^T)^T
 \end{equation}$$
 
-$$\begin{equation} R_{3new} = R_3 + R_2 \rightarrow 
-\begin{bmatrix}
-1 && -2 && 3 && 9\\
-0 && 1 && 3 && 5\\
-0 && 0 && 2 && 4\\
-\end{bmatrix}
+Applying properties of tranpose number 4 from above on the right hand side (RHS)
+
+$$\begin{equation}
+\begin{matrix}
+RHS \rightarrow (AA^T)^T \\
+(AA^T)^T = (A^T)^T A^T \\
+\end{matrix}
 \end{equation}$$
 
-$$\begin{equation} R_{3new} = R_3 * \frac{1}{2} \rightarrow 
-\begin{bmatrix}
-1 && -2 && 3 && 9\\
-0 && 1 && 3 && 5\\
-0 && 0 && 1 && 2\\
-\end{bmatrix}
+Applying properties of tranpose number 1 further
+
+$$\begin{equation}
+(A^T)^T = A
 \end{equation}$$
 
-From row 3 we can gather that $\ z = 2$.
+subsitute and obtain:
 
-Back substitute to obation following from row 2: $\ y + 3(2) = 5$, $\ y = -1$.
-
-Repeat on row 1. : $\ x -2(-1) + 3(2) = 9$, $\ x = 1$
-
-Solution can be written as **(1, -1, 2)**
-
-
-### Gauss-Jordan Elimination and Reduced Row-Echelon Form
-
-Reduced row-echelon form is row-echolon forms but with zeros on top of the leading ones. 
-
-It will have identity matrix like look, but does not have to be.
-
-Carrying on the matrix from above:
-
-$$\begin{bmatrix}
-1 && -2 && 3 && 9\\
-0 && 1 && 3 && 5\\
-0 && 0 && 1 && 2\\
-\end{bmatrix}$$
-
-Using the known variable $\ z$ to create zeros above leading ones
-
-$$\begin{equation} R_{2new} = R_2 + (-3)R_3 \rightarrow 
-\begin{bmatrix}
-1 && -2 && 3 && 9\\
-0 && 1 && 0 && -1\\
-0 && 0 && 1 && 2\\
-\end{bmatrix}
+$$\begin{equation}
+AA^T = AA^T
 \end{equation}$$
 
-$$\begin{equation} R_{1new} = R_1 + (-3)R_3 \rightarrow 
-\begin{bmatrix}
-1 && -2 && 0 && 3\\
-0 && 1 && 0 && -1\\
-0 && 0 && 1 && 2\\
-\end{bmatrix}
+Therefore $\ AA^T$ is symmetric.
+
+##### Proof on properties number 2 using induction
+
+*equation*
+
+$$\begin{equation}
+(A_1 + A_2 + A_3 + ... + A_n)^T = A_1^T + A_2^T + A_3^T + ... + A_n^T 
 \end{equation}$$
 
-Finally using row 2.
+Assume the equation is true until $\ n=k$
 
-$$\begin{equation} R_{1new} = R_1 + 2R_2 \rightarrow 
-\begin{bmatrix}
-1 && 0 && 0 && 1\\
-0 && 1 && 0 && -1\\
-0 && 0 && 1 && 2\\
-\end{bmatrix}
+$$\begin{equation}
+(A_1 + A_2 + A_3 + ... + A_k)^T = A_1^T + A_2^T + A_3^T + ... + A_k^T 
 \end{equation}$$
 
-The final column, constants, are the solution to your equation.
+At $\ n=k+1$ the left hand side would be
 
-#### System with no solutions
-Consider following system, usually obtained during Gauss-Jordan elimination process:
-
-$$\begin{bmatrix}
-1 && -2 && 3 && 4\\
-0 && 1 && 1 && 1\\
-0 && 0 && 0 && 2\\
-\end{bmatrix}$$
-
-Row 3 indicates $\ 0 = 2$ which is a false statement. In this case there is no solution and the system is considered **inconsistent**
-
-
-
+$$\begin{equation}
+((A_1 + A_2 + A_3 + ... + A_k) + A_{k+1})^T
+\end{equation}$$
