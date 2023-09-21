@@ -229,17 +229,17 @@ A =
 
 Trying to solve with **adjoined form**:
 
-\begin{bmatrix}
+$$\begin{bmatrix}
 1 && 2 && 0 && 1 && 0 && 0\\
 3 && -1 && 2 && 0 && 1 && 0\\
 -2 && 3 && -2 && 0 && 0 && 1\\
-\end{bmatrix}
+\end{bmatrix}$$
 
-\begin{bmatrix}
+$$\begin{bmatrix}
 1 && 2 && 0 && 1 && 0 && 0\\
 0 && -7 && 2 && -3 && 1 && 0\\
 0 && 0 && 0 && -1 && 1 && 1\\
-\end{bmatrix}
+\end{bmatrix}$$
 
 The system is inconsistent, and there is no inverse. The matrix $\ A$ is singular.
 
@@ -270,5 +270,26 @@ d && -b \\
 
 1. $\ (A^{-1})^{-1} = A$ 
 2. $\ (A^k)^T = A^{-1}A^T A^{-1}A^T A^{-1}A^T .... = (A^{-1})^T$
-3. $\ (cA)^{-1} = \franc{1}{c}A^{-1}$ Note the inverse of the constant
+3. $\ (cA)^{-1} = \frac{1}{c}A^{-1}$ Note the inverse of the constant
 4. $\ (A^T)^{-1} = (A^{-1})^T$
+
+If matrices $\ A$, $\ B$ are invertible matrices with order of $\ n$, then $\ AB$ is inversible and $\ (AB)^{-1} = B^{-1}A^{-1}$ note the similarity with transposition.
+
+Invertible matrices also has cancellation properties. Given an invertible matrix $\ C$
+
+1.  if $\ AC = BC$ then $\ A = B$ 
+2.  if $\ CA = CB$ then $\ A = B$
+
+Note that it covers both side of matrix multiplication.
+
+### Using Inverse Matrix to Solve a System of Equations
+
+If matrix $\ A$ invertible and $\ Ax = b$ then:
+
+Multiply both side by  $\ A^{-1}$ to obtain:
+
+$\ A^{-1}Ax =A^{-1} b$
+
+since $\ A^{-1}A = I_A$
+
+$\ x =A^{-1} b$
