@@ -208,7 +208,7 @@ $$\begin{equation} R_{1new} = R_1 + 2R_2 \rightarrow
 The final column, constants, are the solution to your equation.
 
 #### System with no solutions
-Consider following system, usually obtained during Gauss-Jordan elimination process:
+Consider the following system, usually obtained during Gauss-Jordan elimination process:
 
 $$\begin{bmatrix}
 1 && -2 && 3 && 4\\
@@ -217,6 +217,46 @@ $$\begin{bmatrix}
 \end{bmatrix}$$
 
 Row 3 indicates $\ 0 = 2$ which is a false statement. In this case there is no solution and the system is considered **inconsistent**
+
+#### Homogenous Equations 
+A system is considered homogenous if all the constant is a zero column matrix.
+
+Example:
+
+$$\begin{bmatrix}
+-1 && 3 && 2 && 0\\
+4 && 1 && 1 && 0\\
+2 && 7 && 4 && 0\\
+\end{bmatrix}$$
+
+A homogenous system of equation always has a trivial answer where all the variables are 0. 
+
+#### System with infinite solutions
+If a system equation intersect at a line (or plane ...) there are infinitely many solutions. To represented the solution must be parameterized.
+
+Consider the following row-echelon matrix
+
+$$\begin{bmatrix}
+1 && 0 && 4 && 4\\
+0 && 1 && 1 && 1\\
+0 && 0 && 0 && 0\\
+\end{bmatrix}$$
+
+Row 3 indicates $\ 0 = 0$ which is a true statement. In addition solving for variable 3 we can obtain the solution for the rest of the equation. Therefore we will variable 3 as the free variable.
+
+$$\begin{matrix}
+x_3 = t\\
+x_2 + t = 1\\
+x_2 = 1 - t\\
+x_1 + 4t = 8\\
+x_1 = 8 - 4t\\
+x_1 = 4(2 - t)\\
+\end{bmatrix}$$
+
+The solution: $\ (4(2-t), 1-t, t) $
+
+There may be systems that require more than 1 free variable. 
+
 
 
 
