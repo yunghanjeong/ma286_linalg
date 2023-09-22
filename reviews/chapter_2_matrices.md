@@ -215,8 +215,19 @@ $\ AA^{-1} = I = A^{-1}A$
 
 Note that it covers both side of matrix multiplication.
 
+Given an invertible matrix $\ A$, $\ A^{-1}$ is unique.
+
 
 
 ### Using Inverse Matrix to Solve a System of Equations
 
 If matrix $\ A$ invertible and $\ Ax = b$ then: $\ x =A^{-1} b$
+
+### Elementary Matrcies
+
+An elementary **row** operation is considered as one of the following:
+
+1. non-zero scalar multiplication to a row
+2. add or subtracking rows or a non-zero scalar multiple of a row
+  - similar to a single operation during Gauss-Jordan elimination
+4. interchage between 2 rows
