@@ -231,3 +231,5 @@ An elementary **row** operation is considered as one of the following:
 2. add or subtracking rows or a non-zero scalar multiple of a row
   - similar to a single operation during Gauss-Jordan elimination
 4. interchage between 2 rows
+
+A **matrix** is considered an **elementary** matrix when it is an n by n square matrix that can be obtained by a **single** elementary **row** operation from an identity matrix $\ I$ with a degree of n
